@@ -28,8 +28,9 @@ format:
 lint:
 	golangci-lint run ./...
 
+# include lint in the default all target
 .PHONY: all
-all: build test format
+all: build test format lint
 
 .PHONY: release
 release:
