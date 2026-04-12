@@ -46,9 +46,9 @@ cover-func:
 	go test -coverprofile=coverage.out ./...
 	go tool cover -func=coverage.out
 
-# cover-threshold fails if total coverage drops below 80%
+# cover-threshold fails if total coverage drops below the threshold
 # useful as a quick sanity check before pushing
-# personal note: bumped threshold to 85% to keep myself honest
+# personal note: bumped threshold to 85% to keep myself honest; may raise to 90% eventually
 COVERAGE_THRESHOLD ?= 85
 .PHONY: cover-threshold
 cover-threshold:
