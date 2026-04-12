@@ -48,10 +48,12 @@ cover-func:
 
 # cover-threshold fails if total coverage drops below 80%
 # useful as a quick sanity check before pushing
+# personal note: bumped threshold to 85% to keep myself honest
+COVERAGE_THRESHOLD ?= 85
 .PHONY: cover-threshold
 cover-threshold:
 	go test -coverprofile=coverage.out ./...
-	go tool cover -func=coverage.out | awk '/^total:/ { if ($$3+0 < 80.0) { print "coverage too low: " $$3; exit 1 } }'
+	go tool cover -func=coverage.out | awk '/^total:/ { if ($$3+0 < $(COVERAGE_THRESHOLD)) { print "coverage too low: " $$3 " (threshold: $(COVERAGE_THRESHOLD)%)"; exit 1 } }'
 
 .PHONY: release
 release:
