@@ -33,6 +33,12 @@ lint:
 .PHONY: all
 all: build test format
 
+# cover opens a coverage report in the browser after running tests
+.PHONY: cover
+cover:
+	go test -coverprofile=coverage.out ./...
+	go tool cover -html=coverage.out
+
 .PHONY: release
 release:
 	goreleaser release --clean
