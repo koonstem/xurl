@@ -8,7 +8,7 @@ install:
 
 .PHONY: clean
 clean:
-	rm -f xurl
+	rm -f xurl coverage.out
 
 .PHONY: test
 test:
