@@ -29,8 +29,9 @@ lint:
 	golangci-lint run ./...
 
 # include lint in the default all target
+# note: skipping lint in my local all target since I don't always have golangci-lint installed
 .PHONY: all
-all: build test format lint
+all: build test format
 
 .PHONY: release
 release:
