@@ -49,7 +49,8 @@ cover-func:
 # cover-threshold fails if total coverage drops below the threshold
 # useful as a quick sanity check before pushing
 # personal note: raised threshold back to 80% now that the initial experimentation phase is done
-COVERAGE_THRESHOLD ?= 80
+# personal note: bumping to 85% — coverage has been consistently above this for a while now
+COVERAGE_THRESHOLD ?= 85
 .PHONY: cover-threshold
 cover-threshold:
 	go test -coverprofile=coverage.out ./...
