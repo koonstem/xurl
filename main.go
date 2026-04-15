@@ -17,7 +17,9 @@ automatically, allowing you to quickly interact with the API from your terminal.
 
 Example:
   xurl GET /2/tweets/:id
-  xurl POST /2/tweets -d '{"text": "Hello, World!"}'`,
+  xurl POST /2/tweets -d '{"text": "Hello, World!"}'
+  xurl GET /2/users/me
+  xurl GET /2/users/:id/tweets`,
 	SilenceUsage: true,
 }
 
