@@ -19,8 +19,13 @@ Example:
   xurl GET /2/tweets/:id
   xurl POST /2/tweets -d '{"text": "Hello, World!"}'
   xurl GET /2/users/me
-  xurl GET /2/users/:id/tweets`,
+  xurl GET /2/users/:id/tweets
+  xurl GET /2/users/:id/followers`,
 	SilenceUsage: true,
+	// CompletionOptions hides the default 'completion' subcommand from help output
+	CompletionOptions: cobra.CompletionOptions{
+		HiddenDefaultCmd: true,
+	},
 }
 
 func main() {
