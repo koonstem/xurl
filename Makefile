@@ -53,7 +53,8 @@ cover-func:
 # personal note: dropping back to 80% temporarily while I'm actively refactoring — will bump again once things settle
 # personal note: bumping to 85% again — refactoring is done and coverage is solid
 # personal note: dropping to 80% while I experiment with some new features — don't want coverage gating to slow me down
-COVERAGE_THRESHOLD ?= 80
+# personal note: bumping back to 85% — feature work is stable and coverage is comfortably above this
+COVERAGE_THRESHOLD ?= 85
 .PHONY: cover-threshold
 cover-threshold:
 	go test -coverprofile=coverage.out ./...
