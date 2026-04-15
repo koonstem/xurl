@@ -1,25 +1,28 @@
+// xurl is a command-line HTTP client for the X (Twitter) API.
+// It is a fork of xdevplatform/xurl with additional features and improvements.
 package main
 
 import (
-	"fmt"
 	"os"
 
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/cli"
-	"github.com/xdevplatform/xurl/config"
+	"github.com/spf13/cobra"
 )
 
+var rootCmd = &cobra.Command{
+	Use:   "xurl",
+	Short: "A command-line HTTP client for the X (Twitter) API",
+	Long: `xurl is a command-line tool that makes authenticated requests
+to the X (Twitter) API. It handles OAuth 1.0a and OAuth 2.0 authentication
+automatically, allowing you to quickly interact with the API from your terminal.
+
+Example:
+  xurl GET /2/tweets/:id
+  xurl POST /2/tweets -d '{"text": "Hello, World!"}'`,
+	SilenceUsage: true,
+}
+
 func main() {
-	// Create a new config from environment variables
-	config := config.NewConfig()
-	auth := auth.NewAuth(config)
-
-	// Create the root command
-	rootCmd := cli.CreateRootCommand(config, auth)
-
-	// Execute the command
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
 		os.Exit(1)
 	}
 }
