@@ -20,7 +20,8 @@ Example:
   xurl POST /2/tweets -d '{"text": "Hello, World!"}'
   xurl GET /2/users/me
   xurl GET /2/users/:id/tweets
-  xurl GET /2/users/:id/followers`,
+  xurl GET /2/users/:id/followers
+  xurl GET /2/users/:id/following`,
 	SilenceUsage: true,
 	// CompletionOptions hides the default 'completion' subcommand from help output
 	CompletionOptions: cobra.CompletionOptions{
