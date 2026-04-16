@@ -56,11 +56,12 @@ func init() {
 		false,
 		"Enable verbose output including request/response headers",
 	)
-	// Default pretty-print to false so raw output can be piped to jq easily
+	// Default pretty-print to true for better readability in my personal workflow.
+	// Use -p=false or pipe to jq if raw output is needed.
 	rootCmd.PersistentFlags().BoolVarP(
 		&prettyPrint,
 		"pretty", "p",
-		false,
+		true,
 		"Pretty-print JSON responses",
 	)
 
